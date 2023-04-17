@@ -180,6 +180,16 @@ window:
   # characters (Unicode points 2500 - 259f).
   #
   #builtin_box_drawing: true
+font:
+  normal:
+    family: Cascadia Code
+  bold:
+    family: Cascadia Code
+  italic:
+    family: Cascadia Code
+  bold_italic:
+    family: Cascadia Code
+  size: 11.0
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false

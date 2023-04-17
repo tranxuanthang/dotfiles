@@ -128,3 +128,6 @@ XF86AudioLowerVolume
     pactl set-sink-volume 0 -5%
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+
+super + x
+    i3lock -c 000000

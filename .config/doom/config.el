@@ -127,24 +127,31 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq confirm-kill-emacs nil)
-(use-package sis
-  ;; :hook
-  ;; enable the /context/ and /inline region/ mode for specific buffers
-  ;; (((text-mode prog-mode) . sis-context-mode)
-  ;;  ((text-mode prog-mode) . sis-inline-mode))
+;; (use-package sis
+;;   ;; :hook
+;;   ;; enable the /context/ and /inline region/ mode for specific buffers
+;;   ;; (((text-mode prog-mode) . sis-context-mode)
+;;   ;;  ((text-mode prog-mode) . sis-inline-mode))
 
-  :config
-  ;; For MacOS
-  ;;
-  (sis-ism-lazyman-config "1" "2" 'fcitx5)
+;;   :config
+;;   ;; For MacOS
+;;   ;;
+;;   (sis-ism-lazyman-config "1" "2" 'fcitx5)
 
-  ;; enable the /respect/ mode
-  (sis-global-respect-mode t)
-  ;; enable the /context/ mode for all buffers
-  (sis-global-context-mode t)
-  ;; enable the /inline english/ mode for all buffers
-  (sis-global-inline-mode t)
-  )
+;;   ;; enable the /respect/ mode
+;;   (sis-global-respect-mode t)
+;;   ;; enable the /context/ mode for all buffers
+;;   (sis-global-context-mode t)
+;;   ;; enable the /inline english/ mode for all buffers
+;;   (sis-global-inline-mode t)
+;;   )
 
 (set-frame-parameter (selected-frame) 'alpha-background 95)
 (add-to-list 'default-frame-alist '(alpha-background . 95))
+
+(use-package fcitx
+  :ensure t
+  :config
+  (setq fcitx-use-dbus nil
+      fcitx-remote-command "fcitx5-remote")
+  (fcitx-aggressive-setup))
